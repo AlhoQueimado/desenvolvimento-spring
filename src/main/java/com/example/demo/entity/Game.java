@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -29,8 +30,16 @@ public class Game {
     private Integer teamSize;
 
     @OneToMany(mappedBy="game")
-    private List<Match> matches;
+    private Set<Match> matches;
+
+    public void addMatch(Match user) {
+        matches.add(user);
+    }
 
     @OneToMany(mappedBy="game")
-    private List<Achievement> achievements;
+    private Set<Achievement> achievements;
+
+    public void addAchievement(Achievement user) {
+        achievements.add(user);
+    }
 }

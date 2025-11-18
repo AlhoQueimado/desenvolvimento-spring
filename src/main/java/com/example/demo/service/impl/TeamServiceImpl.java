@@ -28,11 +28,13 @@ public class TeamServiceImpl implements TeamService {
 
         for (User user : teamDto.getUsers()) {
             savedTeam.addUser(user);
+            user.addTeam(savedTeam);
+            userRepository.save(user);
         }
 
         savedTeam = teamRepository.save(savedTeam);
 
-        return TeamMapper.maptoDto(savedTeam);
+        return TeamMapper.maptoDisplayDto(savedTeam);
     }
 
     @Override
@@ -41,6 +43,14 @@ public class TeamServiceImpl implements TeamService {
         team = TeamMapper.maptoEntity(teamDto);
         team.setId(id);
         Team savedTeam = teamRepository.save(team);
+
+        for (User user : teamDto.getUsers()) {
+            savedTeam.addUser(user);
+            user.addTeam(savedTeam);
+            userRepository.save(user);
+        }
+
+        savedTeam = teamRepository.save(savedTeam);
 
         return TeamMapper.maptoDto(savedTeam);
     }

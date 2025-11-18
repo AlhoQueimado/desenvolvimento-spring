@@ -50,7 +50,7 @@ public class AchievementController {
     }
 
     @PostMapping("/grant/{id}/{achievement_id}")
-    public ResponseEntity<HttpStatus> deleteAchievement(@PathVariable("id") Long id,  @PathVariable("achievement_id") Long achievementId) {
+    public ResponseEntity<HttpStatus> addAchievementToUser(@PathVariable("id") Long id,  @PathVariable("achievement_id") Long achievementId) {
         achievementService.addAchievementToUser(id, achievementId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
