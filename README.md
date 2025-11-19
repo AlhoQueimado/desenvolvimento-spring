@@ -1,5 +1,8 @@
 # CHEESE.COM
 
+## Apresentação em Vídeo:
+https://drive.google.com/file/d/1k8lAI7fOML51VX8H9gF0ShboggnQ9JxJ/view?usp=sharing
+
 ## Instruções para uso:
 Clonar repositório;
 Com sua IDE de preferência, importar projeto, alterar application.properties com os valores corretos do banco de dados Postgresql;
